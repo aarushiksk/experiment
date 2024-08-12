@@ -2,9 +2,28 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from pydantic import BaseModel
 import PyPDF2
 from io import BytesIO
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
+
+origins = [
+    "http://localhost",
+    "http://localhost:8080",
+    "http://localhost:3000",
+    "https://fastapi-example-kw8k.onrender.com",
+    "http://localhost:3000/dashboard/resume",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+)
 # Global variable to store extracted text
 extracted_text_storage = ""
 
