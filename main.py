@@ -17,6 +17,6 @@ app = FastAPI()
 async def start():
     return {"message": "Hello World"}
 
-@app.get("/pdf")
+@app.post("/pdf")
 async def read_pdf():
     return {"message": "This is a PDF Reader"}
