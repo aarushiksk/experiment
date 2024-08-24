@@ -35,6 +35,8 @@ origins = [
     "http://localhost:8080",
     "http://localhost:3000",
     "http://localhost:3000/dashboard/resume",
+    "https://seraph-ai-test-tau.vercel.app/",
+    "https://seraph-ai-test-tau.vercel.app/dashboard",
 ]
 app.add_middleware(
     CORSMiddleware,
