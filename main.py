@@ -30,21 +30,15 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-    "http://localhost:3000",
-    "http://localhost:3000/dashboard/resume",
-    "https://seraph-ai-test-tau.vercel.app/",
-    "https://seraph-ai-test-tau.vercel.app/dashboard",
-]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 # Global variable to store extracted text
 extracted_text_storage = ""
 
